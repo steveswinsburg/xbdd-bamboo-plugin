@@ -1,0 +1,7 @@
+[@ww.textfield labelKey="xbdd.host.noexplan" name="host"/]
+[@ww.textfield labelKey="xbdd.path.noexplan" name="path"/]
+[@ww.textfield labelKey="xbdd.product" name="product"/]
+[@ww.textfield labelKey="xbdd.version.major" name="major"/]
+[@ww.textfield labelKey="xbdd.version.minor" name="minor"/]
+[@ww.textfield labelKey="xbdd.version.servicepack" name="servicepack"/]
+[@ww.textfield labelKey="xbdd.plug-build" name="plug-build"/]

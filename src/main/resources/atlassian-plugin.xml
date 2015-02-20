@@ -1,0 +1,39 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="XBDD"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="XBDD-resources" name="XBDD Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="XBDD.css" location="/css/XBDD.css"/>
+        <resource type="download" name="XBDD.js" location="/js/XBDD.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>XBDD</context>
+    </web-resource>
+    
+    <!-- publish our component -->
+    <component key="myPluginComponent" class="XBDD.MyPluginComponentImpl" public="true">
+        <interface>XBDD.MyPluginComponent</interface>
+    </component>
+    
+    <!-- import from the product container -->
+    <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
+
+    <taskType key="myFirstTask" name="XBDD Result Sender" class="XBDD.XBDDTestResultsSender">
+        <description>A task that send test results to XBDD</description>
+        <configuration class="XBDD.XBDDTestResultsSenderConfigurator"/>
+        <resource type="freemarker" name="edit" location="editExampleTask.ftl"/>
+        <resource type="freemarker" name="view" location="viewExampleTask.ftl"/>
+    </taskType>
+    
+</atlassian-plugin>
