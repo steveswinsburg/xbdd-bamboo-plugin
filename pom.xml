@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -18,6 +17,7 @@
         <bamboo.data.version>5.7.2</bamboo.data.version>
         <amps.version>5.0.13</amps.version>
         <plugin.testrunner.version>1.2.3</plugin.testrunner.version>
+        <project.inceptionYear>2015</project.inceptionYear>
     </properties>
 
     <dependencies>
@@ -74,6 +74,44 @@
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+                    <properties>
+                        <owner>Orion Health</owner>
+                        <email>Orchestral Development Ltd</email>
+                    </properties>
+                    <excludes>
+                        <exclude>**/README</exclude>
+                        <exclude>target/**</exclude>
+                        <exclude>**/*.feature</exclude>
+                        <exclude>node/**</exclude>
+                        <exclude>node_modules/**</exclude>
+                        <exclude>infinitest.filters</exclude>
+                        <exclude>.jshintrc</exclude>
+                        <exclude>*.conf</exclude>
+                        <exclude>*.log</exclude>
+                        <exclude>*.launch</exclude>
+                        <exclude>LICENSE.txt</exclude>
+                        <exclude>**/*.json</exclude>
+                        <exclude>*.json</exclude>
+                        <exclude>Gruntfile.js</exclude>
+                        <exclude>pom.xml</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>pre-integration-test</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
