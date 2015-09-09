@@ -13,26 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package XBDD;
+package ut.myfirstplugin;
 
-import com.atlassian.sal.api.ApplicationProperties;
+import org.junit.Test;
+import XBDD.XBDDPluginComponent;
+import XBDD.XBDDPluginComponentImpl;
 
-public class MyPluginComponentImpl implements MyPluginComponent
+import static org.junit.Assert.assertEquals;
+
+public class XBDDPluginComponentUnitTest
 {
-    private final ApplicationProperties applicationProperties;
-
-    public MyPluginComponentImpl(ApplicationProperties applicationProperties)
+    @Test
+    public void testMyName()
     {
-        this.applicationProperties = applicationProperties;
-    }
-
-    public String getName()
-    {
-        if(null != applicationProperties)
-        {
-            return "myComponent:" + applicationProperties.getDisplayName();
-        }
-        
-        return "myComponent";
+        XBDDPluginComponent component = new XBDDPluginComponentImpl(null);
+        assertEquals("names do not match!", "Component", component.getName());
     }
 }

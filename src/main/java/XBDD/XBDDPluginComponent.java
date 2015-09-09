@@ -13,20 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ut.myfirstplugin;
+package XBDD;
 
-import org.junit.Test;
-import XBDD.MyPluginComponent;
-import XBDD.MyPluginComponentImpl;
-
-import static org.junit.Assert.assertEquals;
-
-public class MyComponentUnitTest
+public interface XBDDPluginComponent
 {
-    @Test
-    public void testMyName()
-    {
-        MyPluginComponent component = new MyPluginComponentImpl(null);
-        assertEquals("names do not match!", "myComponent",component.getName());
-    }
+    String getName();
 }

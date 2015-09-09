@@ -13,31 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package it.myfirstplugin;
+package XBDD;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import com.atlassian.plugins.osgi.test.AtlassianPluginsTestRunner;
-import XBDD.MyPluginComponent;
 import com.atlassian.sal.api.ApplicationProperties;
 
-import static org.junit.Assert.assertEquals;
-
-@RunWith(AtlassianPluginsTestRunner.class)
-public class MyComponentWiredTest
+public class XBDDPluginComponentImpl implements XBDDPluginComponent
 {
     private final ApplicationProperties applicationProperties;
-    private final MyPluginComponent myPluginComponent;
 
-    public MyComponentWiredTest(ApplicationProperties applicationProperties,MyPluginComponent myPluginComponent)
+    public XBDDPluginComponentImpl(ApplicationProperties applicationProperties)
     {
         this.applicationProperties = applicationProperties;
-        this.myPluginComponent = myPluginComponent;
     }
 
-    @Test
-    public void testMyName()
+    public String getName()
     {
-        assertEquals("names do not match!", "myComponent:" + applicationProperties.getDisplayName(),myPluginComponent.getName());
+        if (null != applicationProperties)
+        {
+            return "Component:" + applicationProperties.getDisplayName();
+        }
+        
+        return "Component";
     }
 }
