@@ -1,5 +1,5 @@
 /**
- * Copyright (C) ${project.inceptionYear} Orion Health (Orchestral Development Ltd)
+ * Copyright (C) 2015 Orion Health (Orchestral Development Ltd)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,26 +18,26 @@ package it.myfirstplugin;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import com.atlassian.plugins.osgi.test.AtlassianPluginsTestRunner;
-import XBDD.MyPluginComponent;
+import XBDD.XBDDPluginComponent;
 import com.atlassian.sal.api.ApplicationProperties;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(AtlassianPluginsTestRunner.class)
-public class MyComponentWiredTest
+public class XBDDPluginComponentWiredTest
 {
     private final ApplicationProperties applicationProperties;
-    private final MyPluginComponent myPluginComponent;
+    private final XBDDPluginComponent xbddPluginComponent;
 
-    public MyComponentWiredTest(ApplicationProperties applicationProperties,MyPluginComponent myPluginComponent)
+    public XBDDPluginComponentWiredTest(ApplicationProperties applicationProperties, XBDDPluginComponent xbddPluginComponent)
     {
         this.applicationProperties = applicationProperties;
-        this.myPluginComponent = myPluginComponent;
+        this.xbddPluginComponent = xbddPluginComponent;
     }
 
     @Test
     public void testMyName()
     {
-        assertEquals("names do not match!", "myComponent:" + applicationProperties.getDisplayName(),myPluginComponent.getName());
+        assertEquals("names do not match!", "Component:" + applicationProperties.getDisplayName(), xbddPluginComponent.getName());
     }
 }

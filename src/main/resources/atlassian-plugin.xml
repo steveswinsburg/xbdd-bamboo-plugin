@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (C) ${project.inceptionYear} Orion Health (Orchestral Development Ltd)
+    Copyright (C) 2015 Orion Health (Orchestral Development Ltd)
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -24,10 +24,10 @@
         <param name="plugin-logo">images/pluginLogo.png</param>
     </plugin-info>
 
-    <!-- add our i18n resource -->
+    <!-- add i18n resource -->
     <resource type="i18n" name="i18n" location="XBDD"/>
     
-    <!-- add our web resources -->
+    <!-- web resources -->
     <web-resource key="XBDD-resources" name="XBDD Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
         
@@ -38,9 +38,9 @@
         <context>XBDD</context>
     </web-resource>
     
-    <!-- publish our component -->
-    <component key="myPluginComponent" class="XBDD.MyPluginComponentImpl" public="true">
-        <interface>XBDD.MyPluginComponent</interface>
+    <!-- publish the component -->
+    <component key="XBDDPluginComponent" class="XBDD.XBDDPluginComponentImpl" public="true">
+        <interface>XBDD.XBDDPluginComponent</interface>
     </component>
     
     <!-- import from the product container -->
@@ -49,8 +49,8 @@
     <taskType key="myFirstTask" name="XBDD Result Sender" class="XBDD.XBDDTestResultsSender">
         <description>A task that send test results to XBDD</description>
         <configuration class="XBDD.XBDDTestResultsSenderConfigurator"/>
-        <resource type="freemarker" name="edit" location="editExampleTask.ftl"/>
-        <resource type="freemarker" name="view" location="viewExampleTask.ftl"/>
+        <resource type="freemarker" name="edit" location="editXBDDTaskConfig.ftl"/>
+        <resource type="freemarker" name="view" location="viewXBDDTaskConfig.ftl"/>
     </taskType>
     
 </atlassian-plugin>

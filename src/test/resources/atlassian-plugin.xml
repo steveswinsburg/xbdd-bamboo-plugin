@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (C) ${project.inceptionYear} Orion Health (Orchestral Development Ltd)
+    Copyright (C) 2015 Orion Health (Orchestral Development Ltd)
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@
     </plugin-info>
 
     <!-- from our base plugin -->
-    <component-import key="myComponent" interface="XBDD.MyPluginComponent"/>
+    <component-import key="XBDDPluginComponent" interface="XBDD.XBDDPluginComponent"/>
 
     <!-- from the product container -->
     <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />

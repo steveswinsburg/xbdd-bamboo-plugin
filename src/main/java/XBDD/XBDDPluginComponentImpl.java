@@ -1,5 +1,5 @@
 /**
- * Copyright (C) ${project.inceptionYear} Orion Health (Orchestral Development Ltd)
+ * Copyright (C) 2015 Orion Health (Orchestral Development Ltd)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,22 +17,22 @@ package XBDD;
 
 import com.atlassian.sal.api.ApplicationProperties;
 
-public class MyPluginComponentImpl implements MyPluginComponent
+public class XBDDPluginComponentImpl implements XBDDPluginComponent
 {
     private final ApplicationProperties applicationProperties;
 
-    public MyPluginComponentImpl(ApplicationProperties applicationProperties)
+    public XBDDPluginComponentImpl(ApplicationProperties applicationProperties)
     {
         this.applicationProperties = applicationProperties;
     }
 
     public String getName()
     {
-        if(null != applicationProperties)
+        if (null != applicationProperties)
         {
-            return "myComponent:" + applicationProperties.getDisplayName();
+            return "Component:" + applicationProperties.getDisplayName();
         }
         
-        return "myComponent";
+        return "Component";
     }
 }
