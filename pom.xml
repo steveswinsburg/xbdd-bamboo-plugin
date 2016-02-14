@@ -9,9 +9,9 @@
     <description>This is the XBDD:Result-Sender plugin for Atlassian Bamboo.</description>
     <packaging>atlassian-plugin</packaging>
     <properties>
-        <bamboo.version>5.7.2</bamboo.version>
+        <bamboo.version>5.10.1</bamboo.version>
         <bamboo.data.version>5.7.2</bamboo.data.version>
-        <amps.version>5.1.16</amps.version>
+        <amps.version>6.2.1</amps.version>
         <plugin.testrunner.version>1.2.3</plugin.testrunner.version>
     </properties>
     <dependencies>
