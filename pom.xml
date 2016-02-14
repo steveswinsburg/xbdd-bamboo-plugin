@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>XBDD</groupId>
     <artifactId>Result-Sender</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>XBDD</name>
     <description>This is the XBDD:Result-Sender plugin for Atlassian Bamboo.</description>
     <packaging>atlassian-plugin</packaging>
